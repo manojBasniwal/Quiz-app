@@ -8,7 +8,7 @@ function QuizResult(props) {
       <br/>
       Total Score:{props.totalScore}
     </div>
-    <input className="next-button" value="Try Again" type="button" onClick={props.tryAgain}/>
+    <input className="next-button try-again" value="Try Again" type="button" onClick={props.tryAgain}/>
     </>
   )
 }

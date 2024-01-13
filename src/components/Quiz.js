@@ -18,6 +18,12 @@ function Quiz() {
         }
 
     }
+    const previousQuestion = ()=>{
+        if (currentQuestion < QuizData.length) {
+            setCurrentQuestion(currentQuestion - 1);
+        }
+
+    }
     const updateScore = () => {
         if (clickedOption === QuizData[currentQuestion].answer) {
             setScore(score + 1);
@@ -50,7 +56,6 @@ function Quiz() {
                                     // console.log(QuizData, "manoj")
                                     return (
                                         <button
-                                            //  className="option-button"
                                             className={`option-button ${clickedOption === i + 1 ? "checked" : null
                                                 }`}
                                             key={i}
@@ -61,7 +66,8 @@ function Quiz() {
                                 })
                             }
                         </div>
-                        <input className="next-button" type="button" value='Next' onClick={changeQuestion} />
+                        <button  className="next-button" onClick={changeQuestion}>Next</button>
+                        <button disabled={currentQuestion<1} className="next-button previous" onClick={previousQuestion}>Previous</button>
                     </>
                 )}
             </div>
